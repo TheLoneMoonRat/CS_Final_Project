@@ -19,13 +19,18 @@ void setup () {
 void draw () {
   background(img);
   if (screenMode == 0) {
-    //encryptionField.setVisible(false);
+    encryptionField.setVisible(false);
+    chooseShiftField.setVisible(false);
+    randomShiftButton.setVisible(false);
+    encryptNowButton.setVisible(false);
     image(title, 280, -50);  
   } else if (screenMode == 1) {
-    //About.setVisible(false);
-    //EncryptThis.setVisible(false);
-    //DecryptThis.setVisible(false);
-    //encryptionField.setVisible(true);
-    
+    aboutButton.setVisible(false);
+    encryptButton.setVisible(false);
+    decryptButton.setVisible(false);
+    encryptionField.setVisible(true);
+    chooseShiftField.setVisible(true);
+    randomShiftButton.setVisible(true);
+    encryptNowButton.setVisible(true);
   }
 }

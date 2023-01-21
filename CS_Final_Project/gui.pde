@@ -19,7 +19,7 @@ public void encryptClick(GButton source, GEvent event) { //_CODE_:encryptButton:
 } //_CODE_:encryptButton:465713:
 
 public void decryptClick(GButton source, GEvent event) { //_CODE_:decryptButton:937230:
-  println("decryptButton - GButton >> GEvent." + event + " @ " + millis());
+  setScene("decrypt");
 } //_CODE_:decryptButton:937230:
 
 public void aboutClick(GButton source, GEvent event) { //_CODE_:aboutButton:421427:
@@ -27,19 +27,28 @@ public void aboutClick(GButton source, GEvent event) { //_CODE_:aboutButton:4214
 } //_CODE_:aboutButton:421427:
 
 public void encryptThis(GTextField source, GEvent event) { //_CODE_:encryptionField:562507:
-  println("encryptionField - GTextField >> GEvent." + event + " @ " + millis());
+  
 } //_CODE_:encryptionField:562507:
 
 public void encryptNow(GButton source, GEvent event) { //_CODE_:encryptNowButton:675232:
-  println("button1 - GButton >> GEvent." + event + " @ " + millis());
+  if (screenMode == 1) {
+    encrypted = caesarShift(encryptionField.getText(), shifted);
+  } else if (screenMode == 2) {
+    encrypted = decryption(encryptionField.getText());
+  }
+  encryptionField.setText(encrypted);
 } //_CODE_:encryptNowButton:675232:
 
 public void randomShiftClick(GButton source, GEvent event) { //_CODE_:randomShiftButton:738227:
-  println("button1 - GButton >> GEvent." + event + " @ " + millis());
+  shifted = int(random(0, 25));
 } //_CODE_:randomShiftButton:738227:
 
 public void chooseShift(GTextField source, GEvent event) { //_CODE_:chooseShiftField:656522:
-  println("textfield1 - GTextField >> GEvent." + event + " @ " + millis());
+  if (int(chooseShiftField.getText()) >= 0) {
+    if (int(chooseShiftField.getText()) <= 25) {
+      shifted = int(chooseShiftField.getText());
+    }
+  }
 } //_CODE_:chooseShiftField:656522:
 
 

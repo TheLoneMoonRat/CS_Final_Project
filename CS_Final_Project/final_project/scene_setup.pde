@@ -6,6 +6,7 @@ void setScene(String encryption) {
   } else if (encryption == "home") {
     screenMode = 0;
   } else if (encryption == "decrypt") {
+    possible.clear();
     screenMode = 2;
     //comment this for stable build
     encryptionField.setText("What would you like to decrypt?");

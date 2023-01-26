@@ -36,9 +36,9 @@ public void encryptNow(GButton source, GEvent event) { //_CODE_:encryptNowButton
   } else if (screenMode == 2) {
     encrypted = decryption(encryptionField.getText());
   }
+  setScene("show");
   //uncomment for stable build
   //encryptionField.setText(encrypted);
-  setScene("show");
 } //_CODE_:encryptNowButton:675232:
 
 public void randomShiftClick(GButton source, GEvent event) { //_CODE_:randomShiftButton:738227:

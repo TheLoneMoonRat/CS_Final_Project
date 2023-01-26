@@ -1,7 +1,8 @@
 int alphaRank (String letter) {
   int iterator = 0;
+  String word = letter.toLowerCase();
   while (iterator < 26) {
-    if (alphabet[iterator].equals(letter)) {
+    if (alphabet[iterator].equals(word)) {
       break;
     } else {
       iterator++;

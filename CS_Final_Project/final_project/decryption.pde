@@ -26,7 +26,7 @@ String decryption (String message) {
       decrypted = variant;
       greatest = percentCorrect(variant);
     }
-    
+  possible.add(variant); 
   }
   return(decrypted);
 }

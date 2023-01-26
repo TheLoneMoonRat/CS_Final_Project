@@ -1,16 +1,37 @@
 void mouseClicked () {
-  clicked = true;
-}
-
-void buttonPresent () {
-  fill(0);
-  rect(500, 300, 200, 200);
-  text("HI", 500, 300);
-  if (clicked) {
-    if (mouseX > 500 & mouseX < 700) {
-      if (mouseY > 300 & mouseY < 500) {
-        println("clicked");
+  if (screenMode == 2) {
+    if (mouseX > 600 & mouseX < 800) {
+      if (mouseY > 500 & mouseY < 600) {
+        encryptionField.setText(saved);
       }
     }
   }
+}
+
+void buttonPresent () {
+  noStroke();
+  if (mouseX > 600 & mouseX < 800) {
+      if (mouseY > 500 & mouseY < 600) {
+        fill(3,170,170);
+        rect(580, 480, 240, 140);
+        fill(0);
+        rect(600, 500, 200, 100);
+        fill(3,170,170);
+      } else {
+        fill(6,232,230);
+        rect(580, 480, 240, 140);
+        fill(0);
+        rect(600, 500, 200, 100);
+        fill(6,232,230);
+      }
+  } else {
+    fill(6,232,230);
+    rect(580, 480, 240, 140);
+    fill(0);
+    rect(600, 500, 200, 100);
+    fill(6,232,230);
+  }
+  PFont font = createFont("Arial", 15);
+  textFont(font);
+  text("Decrypt encrypted text?", 620, 550);
 }

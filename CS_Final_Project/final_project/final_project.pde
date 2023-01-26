@@ -7,6 +7,7 @@ ArrayList <String> possible = new ArrayList <String> ();
 PImage img;
 PImage title;
 String encrypted;
+String saved;
 int shifted;
 String solved;
 int clock = 0;
@@ -47,6 +48,7 @@ void draw () {
     encryptNowButton.setVisible(true);
     homeButton.setVisible(true);
   } else if (screenMode == 2) {
+    buttonPresent();
     aboutButton.setVisible(false);
     encryptButton.setVisible(false);
     decryptButton.setVisible(false);
@@ -56,7 +58,6 @@ void draw () {
     homeButton.setVisible(true);
   } else if (screenMode == 3) {
     clock++;
-    buttonPresent();
     aboutButton.setVisible(false);
     encryptButton.setVisible(false);
     decryptButton.setVisible(false);
@@ -66,13 +67,12 @@ void draw () {
     randomShiftButton.setVisible(false);
     homeButton.setVisible(true);
     fill(255);
-    rect(400, 300, 600, 200);
+    rect(400, 200, 600, 200);
     fill(0);
     PFont font = createFont("Arial", 20);
     textFont(font);
-    text(possible.get(counter), 450, 350);
-    int speed = 40 - possible.size() * 2;
-    if (clock % speed == 0) {
+    text(possible.get(counter), 450, 250);
+    if (clock % 3 == 0) {
       if (!encrypted.equals(possible.get(counter))) {
         counter++;
       }

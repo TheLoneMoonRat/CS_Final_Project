@@ -10,6 +10,7 @@ String encrypted;
 int shifted;
 String solved;
 int clock = 0;
+boolean clicked;
 int counter = 0;
 void setup () {
   size(1400, 700);
@@ -55,6 +56,7 @@ void draw () {
     homeButton.setVisible(true);
   } else if (screenMode == 3) {
     clock++;
+    buttonPresent();
     aboutButton.setVisible(false);
     encryptButton.setVisible(false);
     decryptButton.setVisible(false);
@@ -65,12 +67,12 @@ void draw () {
     homeButton.setVisible(true);
     fill(255);
     rect(400, 300, 600, 200);
-    println(possible);
     fill(0);
     PFont font = createFont("Arial", 20);
     textFont(font);
     text(possible.get(counter), 450, 350);
-    if (clock % (80 - (possible.size() * 3)) == 0) {
+    int speed = 40 - possible.size() * 2;
+    if (clock % speed == 0) {
       if (!encrypted.equals(possible.get(counter))) {
         counter++;
       }

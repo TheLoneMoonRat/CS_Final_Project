@@ -42,7 +42,7 @@ public void encryptNow(GButton source, GEvent event) { //_CODE_:encryptNowButton
 } //_CODE_:encryptNowButton:675232:
 
 public void randomShiftClick(GButton source, GEvent event) { //_CODE_:randomShiftButton:738227:
-  shifted = int(random(0, 25));
+  shifted = int(random(1, 25));
 } //_CODE_:randomShiftButton:738227:
 
 public void goHome(GButton source, GEvent event) {

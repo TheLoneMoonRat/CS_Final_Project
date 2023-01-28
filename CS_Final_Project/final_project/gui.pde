@@ -23,7 +23,7 @@ public void decryptClick(GButton source, GEvent event) { //_CODE_:decryptButton:
 } //_CODE_:decryptButton:937230:
 
 public void aboutClick(GButton source, GEvent event) { //_CODE_:aboutButton:421427:
-  setScene("about");
+  println("aboutButton - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:aboutButton:421427:
 
 public void encryptThis(GTextField source, GEvent event) { //_CODE_:encryptionField:562507:
@@ -37,6 +37,8 @@ public void encryptNow(GButton source, GEvent event) { //_CODE_:encryptNowButton
     encrypted = decryption(encryptionField.getText());
   }
   setScene("show");
+  //uncomment for stable build
+  //encryptionField.setText(encrypted);
 } //_CODE_:encryptNowButton:675232:
 
 public void randomShiftClick(GButton source, GEvent event) { //_CODE_:randomShiftButton:738227:
@@ -51,15 +53,7 @@ public void chooseShift(GTextField source, GEvent event) { //_CODE_:chooseShiftF
   if (int(chooseShiftField.getText()) >= 0) {
     if (int(chooseShiftField.getText()) <= 25) {
       shifted = int(chooseShiftField.getText());
-    } else {
-      shifted = int(chooseShiftField.getText()) % 26;
     }
-  } else {
-    int tooSmall = int(chooseShiftField.getText());
-    while (tooSmall < 0) {
-      tooSmall += 26;
-    }
-    shifted = tooSmall;
   }
 } //_CODE_:chooseShiftField:656522:
 

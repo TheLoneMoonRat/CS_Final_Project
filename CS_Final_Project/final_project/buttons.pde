@@ -1,3 +1,7 @@
+//unfortunately, halfway into my development of the program G4P builder crashed and no longer allowed me to open it
+//therefore, I used a rectangle and the mouseClicked function to create another button
+
+//inputs the recently encrypted text into the text field for decryption when clicked
 void mouseClicked () {
   if (screenMode == 2) {
     if (mouseX > 600 & mouseX < 800) {
@@ -8,6 +12,7 @@ void mouseClicked () {
   }
 }
 
+//animates a button
 void buttonPresent () {
   noStroke();
   if (mouseX > 600 & mouseX < 800) {

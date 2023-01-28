@@ -1,3 +1,4 @@
+//determines which GUI elements should be displayed depending on which screen the program is on
 void setScene(String encryption) {
   if (encryption == "encrypt") {
     possible.clear();

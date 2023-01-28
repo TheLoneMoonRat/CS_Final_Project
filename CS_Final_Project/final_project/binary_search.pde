@@ -1,3 +1,4 @@
+//deteremines the alphabet rank of a letter
 int alphaRank (String letter) {
   int iterator = 0;
   String word = letter.toLowerCase();
